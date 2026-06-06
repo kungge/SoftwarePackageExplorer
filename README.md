@@ -39,6 +39,9 @@ npm run start
 5. 在卡片视图和表格视图之间切换。
 6. 使用 `CSV`、`JSON`、`MARKDOWN` 按钮导出当前过滤结果。
 
+<img width="1516" height="1267" alt="20260606164452" src="https://github.com/user-attachments/assets/c4e71f05-3242-44df-ae81-1faa9efab599" />
+
+
 ## API
 
 ### `POST /api/scan`
