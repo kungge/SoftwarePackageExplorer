@@ -23,6 +23,16 @@ npm run start
 
 生产服务默认运行在 `http://127.0.0.1:3001/`。
 
+## Netlify Deployment
+
+项目包含 `netlify.toml` 和 Netlify Functions，可部署到 Netlify：
+
+- Build command: `npm run build`
+- Publish directory: `dist/client`
+- Functions directory: `netlify/functions`
+
+注意：Netlify 是远程运行环境，部署后的 `/api/scan` 只能扫描 Netlify 函数运行环境内的路径，不能扫描访问者电脑上的本机目录。完整目录扫描能力请使用本地运行模式。
+
 ## Scripts
 
 - `npm run dev`：同时启动本地 API 和 Vite 前端。

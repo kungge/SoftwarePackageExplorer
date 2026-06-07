@@ -69,6 +69,9 @@ export function App() {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const isRemoteDeployment =
+    typeof window !== "undefined" &&
+    !["localhost", "127.0.0.1", ""].includes(window.location.hostname);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -209,6 +212,11 @@ export function App() {
       </section>
 
       {error && <div className="notice error">{error}</div>}
+      {isRemoteDeployment ? (
+        <div className="notice">
+          当前页面运行在远程部署环境，无法扫描浏览器所在电脑的本机目录；完整目录扫描请在本地运行 `npm run dev` 或 `npm run start`。
+        </div>
+      ) : null}
       {scanResult?.warnings.length ? <div className="notice">跳过 {scanResult.warnings.length} 个不可读路径，其他内容已正常统计。</div> : null}
 
       <section className="filters">
